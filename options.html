@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <title>Readline Options</title>
+    <style>
+
+        html,body {border:0; margin:0; padding:0;}
+        body {}
+
+        span, strong, label {font-family:'Lucida Grande', sans-serif; font-size:12px; color:#222222;}
+
+        #container {border-left:1px #eeeeee solid; width:600px; margin-left:160px; padding-bottom:24px; margin-top:4px;}
+
+        #head {border-bottom:1px #eee solid; padding:16px 6px 12px 20px;}
+        #head span {font-size:18px;}
+
+        #body div.preference {padding:8px 16px;}
+
+        #body div.preference div.title {padding:8px;}
+        #body div.preference div.title span {font-size:14px;}
+
+        #body div.preference div.instruction {padding:2px 0 2px 24px;}
+        #body div.preference div.instruction span {display:block; padding:4px;}
+
+        #body div.preference div.control {margin-top:4px;}
+
+        #body div.preference div.control div.select {padding:2px 0 2px 22px;}
+        #body div.preference div.control div.select label {font-size:12px; width:120px; display:inline-block;}
+        #body div.preference div.control div.select select {width:160px;}
+
+        #body div.preference div.control div.checkbox {padding:2px 0 2px 18px;}
+        #body div.preference div.control div.checkbox input {}
+        #body div.preference div.control div.checkbox label {padding-left:4px;}
+
+        div.preference div.control div.slider {padding:4px 22px 2px 22px;}
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="lib/jquery.ui.1.10.4.min.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="head">
+            <span>Readline Options</span>
+        </div>
+        <div id="body">
+            <div class="preference">
+                <div class="title">
+                    <span>Keyboard Shortcuts</span>
+                </div>
+                <div class="instruction">
+                    <span>Pause/Resume: spacebar</span>
+                    <span>Step Back/Forth: left/right arrow</span>
+                    <span>Speed Up/Down: up/down arrow</span>
+                </div>
+            </div>
+
+            <div class="preference">
+                <div class="title">
+                    <span>Speed (Word per Minute): <span id="wpm_value">250</span></span>
+                </div>
+                <div class="control">
+                    <div class="slider" style="width:360px;">
+                        <div id="wpm_slider"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preference">
+                <div class="title">
+                    <span>Appearance</span>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_SHOW_PROGRESS_BOOL"><label for="RSVP_SHOW_PROGRESS_BOOL">Show progress bar</label>
+                    </div>
+                    <div class="checkbox" style="margin-bottom:8px;">
+                        <input type="checkbox" name="RSVP_HIGHLIGHT_FOCAL_POINT_BOOL"><label for="Highlight">Highlight optimal focal point</label>
+                    </div>
+                    <div class="select">
+                        <label for="RSVP_SHADOW_COLOR_STR">Shadow Color</label>
+                        <select name="RSVP_SHADOW_COLOR_STR">
+                            <option value="#dddddd">Light</option>
+                            <option value="#222222">Dark</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <label for="RSVP_FONT_SIZE_STR">Font Size</label>
+                        <select name="RSVP_FONT_SIZE_STR">
+                            <option value="18px">Tiny</option>
+                            <option value="24px">Small</option>
+                            <option value="36px">Medium</option>
+                            <option value="56px">Large</option>
+                            <option value="96px">Huge</option>
+                            <!--<option value="128px">Gigantic</option>-->
+                        </select>
+                    </div>
+                    <div class="select">
+                        <label for="RSVP_FONT_FAMILY_STR">Font Family</label>
+                        <select name="RSVP_FONT_FAMILY_STR">
+                            <option value="Verdana">Verdana</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="Tahoma">Tahoma</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preference">
+                <div class="title">
+                    <span>Triggers</span>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_AUTOSTART_BOOL"><label for="RSVP_AUTOSTART_BOOL">Autostart when I Select Text</label>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_SPACEBAR_TRIGGER_BOOL"><label for="RSVP_SPACEBAR_TRIGGER_BOOL">Select Text + Spacebar starts Readline</label>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_ALT_SELECT_TRIGGER_BOOL"><label for="RSVP_ALT_SELECT_TRIGGER_BOOL">Hold Alt + Select Text starts Readline</label>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_ALT_HOVER_TRIGGER_SELECTION_BOOL"><label for="RSVP_ALT_HOVER_TRIGGER_SELECTION_BOOL">Hold Alt + Hover Over Paragraph will highlight text to start Readline</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preference">
+                <div class="title">
+                    <span>Advanced</span>
+                </div>
+                <div class="control">
+                    <div class="checkbox">
+                        <input type="checkbox" name="RSVP_DYNAMIC_SPEED_BOOL"><label for="RSVP_DYNAMIC_SPEED_BOOL">Dynamically adjust speed on long words</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="lib/jquery.1.10.2.min.js"></script>
+    <script src="lib/jquery.ui.1.10.4.min.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
+

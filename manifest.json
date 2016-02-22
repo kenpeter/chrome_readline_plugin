@@ -1,0 +1,34 @@
+{
+   "background": {
+      "scripts": [ "src/ReadlineUser.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon/icon_128px_disabled.png",
+      "default_popup": "popup.html",
+      "default_title": "Readline"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "content_script.css" ],
+      "js": [ "lib/jquery.1.10.2.min.js", "lib/jquery.ui.1.10.4.min.js", "src/ReadlineRSVPController.js", "src/ReadlineRSVPModel.js", "src/ReadlineRSVPView.js", "content_script.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Reading made fast & simple",
+   "icons": {
+      "128": "icon/icon_128px_enabled.png",
+      "16": "icon/icon_16px_enabled.png",
+      "19": "icon/icon_19px_enabled.png",
+      "32": "icon/icon_32px_enabled.png",
+      "38": "icon/icon_38px_enabled.png",
+      "48": "icon/icon_48px_enabled.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiXdIIU1fYQOFDX5ucw6FxhuoG/GBl1xq6r/V2JtUxQYvJynceDEkq+HbFKS0zE3ZuBUviv+xaA/FvvKE4fZY8LowcVGh6/muOtpA3haHwM0F4f7A0C0nKDAn/1E0IFzBT5UIhE4L/LH6fkvyYkgim2legl1NemBwgdmsbEsHbDPcnOWYa/2nTb2uD9qQsbqaE9z9iNOghh8pGmibpAmvivi5hOvIMWVwr0kFSnwT2PUIka3o6ZluzCJbaMrOFQpzO9McyiYAd2RmPI8h8b33vS2NgoJyVgAV5Jh7q/lpK+YNJATZj7WKjdI4eB/ILb8BV9JCTJSEmSCU7WpEnbVJTwIDAQAB",
+   "manifest_version": 2,
+   "name": "Readline",
+   "options_page": "options.html",
+   "permissions": [ "http://*/*", "https://*/*", "contextMenus", "tabs", "storage" ],
+   "short_name": "readline",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.2"
+}

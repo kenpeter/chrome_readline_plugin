@@ -1,0 +1,138 @@
+/*
+ * Content style CSS
+ *
+ * Copyright 2014, Jiho Park.
+ */
+
+
+/***** Common *****/
+
+div.readline_background {
+    background:#ddd;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    text-align:center;
+    opacity:0.90;
+    filter:alpha(opacity=90);
+    z-index:2147483646;
+}
+
+font.readline_hover {
+    background:#ddd;
+    border:0;
+    cursor: pointer;
+    display:default;
+    font-family:inherit;
+    font-size:inherit;
+    margin:0;
+    padding:0;
+    text-decoration:inherit;
+}
+
+
+/***** RSVP *****/
+
+div.readline_rsvp {
+    left:50%;
+    margin:-128px -270px;
+    padding:0;
+    position:fixed;
+    text-align:left;
+    top:40%;
+    width:540px;
+    z-index:2147483647;
+}
+
+div.readline_rsvp_box {
+}
+
+div.readline_rsvp_box_border {
+    background:#222;
+    height:4px;
+}
+
+div.readline_rsvp_progressbar {
+    margin:0;
+    padding:0;
+    background:#888;
+    float:left;
+    width:0px;
+    height:4px;
+}
+
+div.readline_rsvp_focal_point_container {
+    background:#fff;
+}
+
+div.readline_rsvp_focal_point_marker {
+    border-right:4px solid #222;
+    width:35%;
+    height:12px;
+}
+
+div.readline_rsvp_text_container {
+    display:block;
+    width:100%;
+    color:#222222;
+    background:#fff;
+    line-height:normal;
+    text-align:left;
+    padding:4px 0 8px 0;
+}
+
+span.readline_rsvp_text {
+    margin:0;
+    padding:0;
+}
+
+span.readline_rsvp_text_focus_letter {
+    color:red;
+}
+
+div.readline_rsvp_stat {
+    text-align:right;
+    padding:2px 4px;
+    line-height:100%;
+}
+
+div.readline_rsvp_stat span {
+    font-family: Arial;
+    font-size:10px;
+    color:#888;
+}
+
+
+/***** Markup *****/
+
+em.readline_markup_sentence {
+    font-family:inherit;
+    font-size:inherit;
+    font-style:inherit;
+    text-decoration:inherit;
+}
+
+em.readline_markup_subject {
+    font-family:inherit;
+    font-size:inherit;
+    font-style:inherit;
+    text-decoration:inherit;
+}
+
+em.readline_markup_verb {
+    background:red;
+    font-family:inherit;
+    font-size:inherit;
+    font-style:inherit;
+    text-decoration:inherit;
+}
+
+em.readline_markup_punctuation {
+    font-family:inherit;
+    font-size:inherit;
+    font-style:inherit;
+    text-decoration:inherit;
+}
+
